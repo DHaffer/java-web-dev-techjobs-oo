@@ -17,7 +17,7 @@ public class Job {
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
     public Job() {
-        this.id = nextId;
+        id = nextId;
         nextId++;
     }
 
@@ -91,6 +91,49 @@ public class Job {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    @Override
+    public String toString(){
+        String nameValue = this.getName();
+        String employerValue = employer.getValue();
+        String locationValue = location.getValue();
+        String positionTypeValue = positionType.getValue();
+        String coreCompetencyValue = coreCompetency.getValue();
+
+        if(nameValue.isEmpty() && employerValue.isEmpty() && locationValue.isEmpty() && positionTypeValue.isEmpty() && coreCompetencyValue.isEmpty()){
+            return "OOPS! This job does not seem to exist.";
+        }
+
+        if(nameValue.isEmpty()){
+            nameValue = "Data not available.";
+        }
+        if (employerValue.isEmpty()){
+             employerValue= "Data not available.";
+        }
+        if (locationValue.isEmpty()){
+            locationValue = "Data not available.";
+        }
+        if(positionTypeValue.isEmpty()){
+            positionTypeValue = "Data not available.";
+        }
+        if(coreCompetencyValue.isEmpty()){
+            coreCompetencyValue = "Data not available.";
+        }
+
+        return "\n" +
+                "ID: " + id +
+                "\n" +
+                "Name: " + nameValue +
+                "\n" +
+                "Employer: " + employerValue +
+                "\n" +
+                "Location: " + locationValue +
+                "\n" +
+                "Position Type: " + positionTypeValue +
+                "\n" +
+                "Core Competency: " + coreCompetencyValue +
+                "\n";
     }
 
 }
