@@ -1,5 +1,6 @@
 package org.launchcode.techjobs_oo;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Job {
@@ -105,7 +106,7 @@ public class Job {
             return "OOPS! This job does not seem to exist.";
         }
 
-        if(nameValue.isEmpty()){
+        if (nameValue.isEmpty()){
             nameValue = "Data not available.";
         }
         if (employerValue.isEmpty()){
@@ -114,10 +115,10 @@ public class Job {
         if (locationValue.isEmpty()){
             locationValue = "Data not available.";
         }
-        if(positionTypeValue.isEmpty()){
+        if (positionTypeValue.isEmpty()){
             positionTypeValue = "Data not available.";
         }
-        if(coreCompetencyValue.isEmpty()){
+        if (coreCompetencyValue.isEmpty()){
             coreCompetencyValue = "Data not available.";
         }
 
